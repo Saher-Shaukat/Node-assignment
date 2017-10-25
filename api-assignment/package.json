@@ -1,0 +1,33 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "Assignment API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" and exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Saher-Shaukat/Node-assignment.git"
+  },
+  "keywords": [
+    "Node",
+    "API",
+    "Asignment"
+  ],
+  "author": "Saher Shaukat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Saher-Shaukat/Node-assignment/issues"
+  },
+  "homepage": "https://github.com/Saher-Shaukat/Node-assignment#readme",
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  },
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "mongoose": "^4.12.2"
+  }
+}
