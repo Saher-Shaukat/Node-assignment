@@ -1,0 +1,24 @@
+<body>
+  <h1> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRj53WKLQ2GGEyfR3rCR1vTkr_YIxUfKA_bzbbZptX9SvniZ93i"  ></h1>
+  
+ </body>
+ <nav class="navbar navbar-inverse">
+     
+         <div class="collapse navbar-collapse" >
+                 <ul class="nav navbar-nav navbar-left">
+                   <li><a [routerLink]="['/Home']" calss="active" routerLinkActive="active">Home</a></li>
+                </ul>
+         
+                <ul class="nav navbar-nav navbar-right">
+                <ng-template [ngIf]="!service.changeNav()">
+                     <li><a>Welcome {{service.getLoggedinUser()}}</a></li>
+                     <li><a  [routerLink]="['/Product']" class="active" routerLinkActive="active"><span class="glyphicon glyphicon-shopping-cart" ></span> Product</a></li>      
+                     <li><a  [routerLink]="['/Home']" class="active" routerLinkActive="active" (click)="Signout()"><span class="glyphicon glyphicon-log-out" ></span> Logout</a></li>
+                </ng-template>
+                <ng-template [ngIf]="service.changeNav()">
+                     <li><a  [routerLink]="['/Signup']" class="active" routerLinkActive="active"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a [routerLink]="['/Login']" class="active" routerLinkActive="active"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ng-template>
+                </ul>
+        </div>
+</nav>

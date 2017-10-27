@@ -1,0 +1,67 @@
+<div class="page-header">
+  <h1>Products
+    <div style="float: right; cursor: pointer;">
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" (click)="getcart()"><span class="glyphicon glyphicon-shopping-cart my-cart-icon"></span> Shopping Cart
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu dropdown-menu-right">
+                <div class="container">
+                  <table id="cart" class="table table-hover table-condensed">
+                            <thead>
+                            <tr>
+                              <th style="width:60%">Product</th>
+                              <th style="width:15%">Price</th>
+                              <th style="width:15%">Qty</th>
+                              <th style="width:15%">Subtotal</th>
+                              <th style="width:15%"></th>
+                            </tr>
+                          </thead>
+                          <tbody *ngFor="let cartp of cartProducts">
+                            <tr>
+                              <td data-th="Product">{{cartp.productName}}</td>
+                              <td data-th="Price">$ {{cartp.price}}</td>
+                              <td data-th="Qty">{{cartp.qty}}</td>
+                              <td data-th="Subtotal" class="text-center">${{cartp.subtotal}}</td>
+                              <td class="actions" data-th="">
+                                
+                                <button class="btn btn-danger btn-sm" (click)="deleteProductFromCart(cartp)">X</button>								
+                              </td>
+                            </tr>
+                          </tbody>
+                          <tfoot>
+                            <tr>
+                              <td colspan="2" class="hidden-xs"></td>
+                              
+                              <td><a  class="btn btn-success btn-block" (click)="bill()">Checkout <i class="fa fa-angle-right"></i></a></td>
+                            </tr>
+                          </tfoot>
+                        </table>
+                </div>
+            </ul>
+          </div>
+     
+    </div>
+  </h1>
+</div>
+<div class="col-md-2 column productbox" *ngFor="let product of products">
+  <img src="{{product.img}}" class="img-responsive">
+  <div class="producttitle">{{product.name}}</div>
+   <div class="productprice">
+     
+    <div class="pull-right">
+<table>
+      <tr>
+        <th> <div>£{{product.price}}</div></th>
+        <th><form><input class="qty" type="number" min="1" value="1" id="qty{{product.productId}}"></form></th>
+        <th><a class="btn btn-danger btn-sm" role="button" (click)="addToCart(product)">Add to cart</a></th>
+
+      </tr>
+      </table>
+      </div>
+          
+      
+
+     
+ 
+</div>
+</div>
